@@ -1,0 +1,713 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Robooto", sans-serif;
+}
+
+body {
+  background-color: #FAF9F6;
+  color: #2C2C2C; 
+}
+
+h2, p strong{
+  color: #D6A419;
+}
+
+    
+#logo {
+  position: absolute;
+  width: 50px ;
+  background: url("./imagenes/firefly1.png") no-repeat;
+  height: 50px;
+  top: 1.5rem; 
+  left: 2rem;
+  background-size: contain;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1.5s ease-out forwards;
+  }
+
+ section{
+      width: 100%;
+      
+    }
+    
+ #banner{
+  position: relative;
+  width: 100%;
+  height: 90vh; 
+  background: 
+  linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), 
+  url("./imagenes/banner11.png") no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-start;   
+  color: #fff; 
+  padding: 2rem; 
+       }
+
+
+#banner div {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1.5s ease-out forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  #banner div h1 {
+      margin: 0 0 0.2em 0;
+      text-align: left;
+      font-style: italic;
+      color: white;
+      font-family: playfair display, serif;
+      
+    }
+
+
+  #banner div p{
+      margin: 0;
+      text-align: left;
+      max-width: 600px; 
+    }
+
+  #info {
+    display: block;
+    margin: 1rem 0;
+  }
+
+#nota {
+  max-width: 100%;
+  padding: 16px;
+}
+
+  #nota h2 {
+  text-align: start;
+  margin-bottom: 12px;
+}
+
+#nota p {
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+#polaroid {
+  margin: 1rem auto;
+  max-width: 100%;
+  width: 345px; 
+  height: 270px;
+  background: url("./imagenes/polaroid.png") no-repeat center center / cover;
+  
+}
+
+
+.contenido-target {
+  margin-top: 0.5rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.6s ease, opacity 0.6s ease;
+}
+
+.contenido-target:target {
+  max-height: 500px; 
+  opacity: 1;
+}
+
+
+.toggle {
+  color: white;     
+  text-decoration: none;
+  cursor: pointer;
+  background-color:  #B86B77;
+  padding: 3px 6px;
+}
+
+.toggle:hover {
+  text-decoration: underline; 
+}
+
+
+
+.cards-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 320px; 
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+#cards h2 {
+  margin: 0 0 1rem 1rem
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 270px;   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;      
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.card-front,.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  backface-visibility: hidden; 
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.card-front {
+  background: #fff;
+
+}
+
+.img-container {
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#kat {
+  background-image: url("./imagenes/tulymob.png");
+  height: 180px;
+}
+
+#sarah {
+  background-image: url("./imagenes/sarahmob.jpg");
+  height: 180px;
+}
+
+#alissa {
+  background-image: url("./imagenes/alissamob.jpg");
+  height: 180px;
+}
+
+#roan {
+  background-image: url("./imagenes/roanmob.jpg");
+  height: 180px;
+}
+
+
+
+.card-front h3 {
+  height: 60px;           
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
+  margin: 0;
+  color: #2C2C2C;
+  background: #fff;        
+}
+
+
+.card-back {
+  background: #FAF9F6;
+  color: #2C2C2C;
+  transform: rotateY(180deg);
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-back h3 {
+  margin-bottom: 0.5rem;
+  color: #D6A419;
+}
+
+
+#reseñas h2 {        
+  text-align: center;        
+  margin: 1.5rem 0;           
+  color: #D6A419;             
+}
+
+.reseñas-ala {
+  position: relative;
+  padding: 0 2rem;  
+}
+
+
+.articles-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;         
+  padding: 1rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-btn img {
+  width: clamp(32px, 4vw, 90px);
+  height: auto;
+  }
+
+.scroll-btn.left  { left: 0; } 
+.scroll-btn.right { right: 0; }
+
+
+.reseña {
+  flex: 0 0 250px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.reseña img:first-of-type {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+
+.rating {
+  display: block;
+  margin: 0.25rem auto 0.5rem; 
+  height: auto;
+  max-width: 150px;           
+}
+
+.reseña h4 {
+  margin: 0.5rem 0 0.25rem;
+  color: #B86B77;
+}
+
+.reseña p {
+  color: #2C2C2C;
+  font-style: italic;
+}
+
+.reseña p::before {
+  content: "“";       
+  color: #B86B77;
+  font-weight: bold;
+}
+
+.reseña p::after {
+  content: "”";       
+  color: #B86B77;
+  font-weight: bold;
+}
+
+
+footer {
+  margin-top: 3rem;
+  background-color: #FAF9F6;
+  color: #2C2C2C;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-top: 2px solid #B86B77;
+}
+
+footer nav{
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer nav a {
+  color: #B86B77;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+summary {
+  font-weight: 600;
+  color: #B86B77;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  
+}
+
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; 
+  margin-top: 1rem;
+}
+
+.redes img {
+  height: 60px; 
+  width: auto
+}
+
+.redes img[alt="YouTube"] {
+  width: 70px; 
+  height: auto;
+  position: relative;
+  top: -7.5px;
+}
+
+
+p {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  line-height: 1.6; 
+}
+
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.3;
+}
+
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.3;
+}
+
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.2;
+}
+
+
+footer, footer p, footer summary {
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 1.5;
+}
+
+
+
+
+@media screen and (min-width: 577px) and (max-width: 900px) {
+
+    #banner{
+  position: relative;
+  width: 100%;
+  height: 90vh; 
+  background: 
+  linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), 
+  url("./imagenes/banner1.png") no-repeat center center;
+  background-size: cover;
+       }
+
+  #nota {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    padding: 4%;
+  }
+
+  #nota p {
+    font-size: 1.1rem; 
+    line-height: 1.6;
+  }
+
+  .texto, .extra-contenido {
+    grid-column: 1;
+    order: 1;
+  }
+
+  #polaroid {
+    grid-column: 2;
+    order: 2;
+    background-image: url("./imagenes/poltablet.png");
+    width: 205px;
+    height: 700px;
+    align-self: start;
+    margin-top: -25rem;
+  }
+
+  .leer-mas,
+  .contenido-target {
+    grid-column: 1;
+    order: 3; 
+  }
+  
+  .toggle {
+    display: none;
+  }
+
+
+  #mas {
+    display: block !important;
+    opacity: 1;
+    max-height: none;
+    transition: none;
+  }
+
+    .img-container {
+    background-size: cover;
+    width: 100%;
+    height: 267px;
+
+  }
+
+  #kat {
+    background: url("./imagenes/tuly.jpg") no-repeat center center; 
+  }
+
+ #sarah {
+    background: url("./imagenes/sarah.jpg") no-repeat center center; 
+  }
+
+  #alissa {
+    background: url("./imagenes/alissa.jpg") no-repeat center center; 
+  }
+
+  #roan {
+    background: url("./imagenes/roan.jpg") no-repeat center center; 
+  }
+
+#cards {
+
+    padding: 4%
+  }
+
+#cards h2 {
+  margin: 0;
+  }
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .cards-grid .card {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  } 
+
+
+
+}
+
+
+
+  @media screen and (min-width: 900px) {
+     
+    #banner{
+      width: 100%;
+     height: 1000px;
+      background:  linear-gradient(to top, rgba(84, 84, 84, 0.4), rgba(195, 195, 195, 0))
+     , url("./imagenes/banner.jpg") no-repeat center center fixed;
+      background-size: cover;
+       }
+
+
+    #logo {
+      position: absolute;
+      width: 70px ;
+      background: url("./imagenes/firefly2.png") no-repeat;
+      height: 70px;
+      background-size: contain;
+      left: 1rem;
+      top: 0.5rem;
+    }
+
+    #nota {
+    display: grid;
+    grid-template-areas:
+      "titulo titulo"
+      "texto extra"
+      "polaroid polaroid";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start; 
+    margin: 0 auto 6rem auto;
+    max-width: 95%;
+    padding: 4%;
+    }
+
+    
+    .contenido-target {
+    padding-right: 1rem;
+    opacity: 1;
+    }
+
+
+    .texto h2 {
+      grid-area: titulo; 
+    }
+
+    .texto {
+      grid-area: texto; 
+    }
+
+    #mas {
+    display: block !important;
+    opacity: 1;
+    max-height: none;
+    transition: none; 
+    }
+
+    .extra-contenido {
+      grid-area: extra; 
+      display: block;
+      margin-top: -0.5rem;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    #polaroid {
+      grid-area: polaroid; 
+      width: 100%;
+      max-width: 836px;
+      height: 327px;
+      margin: 2rem auto 0;
+      background: url("./imagenes/deskpol.png") no-repeat center/cover;
+    }
+
+
+    #cards {
+
+    padding: 4%
+  }
+
+
+    #cards h2 {
+    text-align: center;
+    }
+
+
+    .cards-grid {
+    display: grid;                         
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto;        
+    gap: 8rem;                           
+    justify-items: center;                
+    padding: 2rem;
+    margin-bottom: 6rem;                         
+  }
+
+  #cards .card {
+    width: 100%;
+    max-width: 400px;   
+    height: 250px;   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  }                      
+      
+   .img-container {
+    background-size: cover;
+    width: 100%;
+    height: 267px;
+
+  }
+
+  #kat {
+    background: url("./imagenes/tuly.jpg") no-repeat center center; 
+  }
+
+ #sarah {
+    background: url("./imagenes/sarah.jpg") no-repeat center center; 
+  }
+
+  #alissa {
+    background: url("./imagenes/alissa.jpg") no-repeat center center; 
+  }
+
+  #roan {
+    background: url("./imagenes/roan.jpg") no-repeat center center; 
+  }
+
+  #cards .card-front h3 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  #cards .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+    
+  .articles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+    padding: 4%;
+  }
+
+  .reseña {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;  
+    max-width: 350px; 
+    margin: 0 auto;
+  }
+
+  .reseña:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .scroll-btn img  { 
+    width: 90px;
+    height: 90px;
+   } 
+}
